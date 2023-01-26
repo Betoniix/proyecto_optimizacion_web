@@ -2,8 +2,8 @@
 
 ### Integrantes
 
-- Gonzalez Herrera Miguel
-  ![](.profile/miguel.jpg "Miguel")
+- Gonzalez Herrera Miguel  
+  ![](.profile/miguel.jpeg "Miguel")
 - Lopez Guerrero Zenet
   ![](.profile/cnet.jpeg "Zenet")
 - Poot Carrillo Jorge
