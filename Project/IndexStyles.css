@@ -1,0 +1,175 @@
+.cyanButton {
+    background-color: rgb(25, 149, 173);
+    color: rgb(241, 241, 242);
+    width: 100px;
+    height: 35px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 15px;
+    border-color: rgb(241, 241, 242);
+    border-image: initial;
+    border-style: solid;
+    border-width: 1px;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(241, 241, 242);
+}
+
+#searchButton {
+    background-color: rgb(241, 241, 242);
+    color: rgb(25, 149, 173);
+    width: 100px;
+    height: 35px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 15px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    text-decoration: none;
+}
+
+#linkBox {
+    width: 210px;
+    height: 35px;
+}
+#newsBox {
+    width: 460px;
+    height: 35px;
+}
+
+.adli {
+    padding-top: 18px;
+    color: black;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.dropdown-sort-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(241, 241, 241);
+    min-width: 100px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px;
+    z-index: 1;
+    overflow: auto;
+}
+
+.show {display: block;}
+
+#linkContainer {
+    background-color: rgb(161, 214, 210);
+    height: 592px;
+    width: 310px;
+    font-size: 30px;
+    border-color: rgb(25, 149, 173);
+    border-image: initial;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    padding: 20px;
+}
+#readerContainer {
+    margin-top: 15px;
+    background-color: antiquewhite;
+    height: 94%;
+    width: 100%;
+}
+#currentSort {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.dropdown-sort {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-sort-content button {
+    color: black;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+
+.dropbtn {
+    background-color: azure;
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+.sortByText {
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#linkTitle {
+    color: white;
+    text-decoration: none;
+}
+
+#chooseSort {
+    display: flex;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+#headContainer {
+    width: initial;
+    height: 60px;
+    background-color: rgb(25, 149, 173);
+    display: flex;
+    align-items: center;
+}
+#browser {
+    padding-left: 400px;
+    display: flex;
+    justify-content: center;
+}
+#newsContainer {
+    display: inline-block;
+    background-color: rgb(188, 186, 190);
+    height: 592px;
+    width: 750px;
+    font-size: 30px;
+    margin: 10px 10px 10px 30px;
+    padding: 20px;
+}
+#container {
+    display: flex;
+    width: initial;
+    height: auto;
+    background-color: initial;
+    margin-top: 31px;
+    margin-left: 10px;
+}
+#headLinkCont {
+    display: flex;
+    justify-content: center;
+}
+#headNewsCont {
+    display: flex;
+    justify-content: space-between;
+}
+
+#headTitle {
+    color: white;
+    padding-left: 24px;
+    font-size: 20px;
+}
+
