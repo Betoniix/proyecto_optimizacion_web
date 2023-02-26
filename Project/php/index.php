@@ -1,5 +1,6 @@
 <?php
 include_once('./util/news_array.php');
+include_once('./util/mysql_handler.php');
 
 //https://rss.art19.com/apology-line
 //http://feeds.bbci.co.uk/news/world/rss.xml
@@ -7,7 +8,7 @@ include_once('./util/news_array.php');
 
     $url = "http://feeds.bbci.co.uk/news/world/rss.xml";
     
-  //  print_r($_POST);
+  
     $post_data = $_POST["links"];
     
     $jsonUrls = json_decode($post_data);
