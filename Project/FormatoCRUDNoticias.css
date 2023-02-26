@@ -1,0 +1,34 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 25 feb 2023, 19:01:55
+    Author     : jorge
+*/
+
+#ContenedorCRUD{
+    border: solid 1px black;
+    background-color: white;
+    width: 20%;
+    font-style: initial;
+    font-family: verdana;
+    /*font-style: oblique; para cursiva*/
+}
+#EncabezadoCRUD{
+    border: solid 1px blue;
+    background-color: #9999ff;
+    width: 99%;
+}
+#TituloCrud{
+    font-weight: bold;
+}
+#ContenidoCRUD{
+    border: solid 1px blue;
+    background-color: #ccccff;
+    width: 99%;
+}
+
+#btn_add_crud{
+    width: 99%;
+}
