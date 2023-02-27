@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 #ContenedorCRUD{
     border: solid 1px black;
-    background-color: white;
+    background-color: rgb(161, 214, 210);
     width: 20%;
     font-style: initial;
     font-family: verdana;
@@ -17,15 +17,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 #EncabezadoCRUD{
     border: solid 1px blue;
-    background-color: #9999ff;
+   background-color: rgb(25, 149, 173);
     width: 99%;
 }
 #TituloCrud{
     font-weight: bold;
 }
 #ContenidoCRUD{
-    border: solid 1px blue;
-    background-color: #ccccff;
+    /* border: solid 1px blue;*/
+   
+    margin-right: 15px;
+    background-color: rgb(161, 214, 210);
     width: 99%;
 }
 
