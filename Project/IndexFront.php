@@ -8,7 +8,8 @@
     <title>RSS_Reader</title>
 </head>
 <body>
-  
+   
+           
     <div id="headContainer">
         <div id="headTitle"> <a id="linkTitle" href="Index.html">RSS Reader </a></div>
         <div id="browser">
