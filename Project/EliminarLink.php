@@ -28,4 +28,4 @@ if(!$mysqli){
     }
     
     echo $resultado;
-     header("location: IndexFront.php");
+     header("location: Index.php");

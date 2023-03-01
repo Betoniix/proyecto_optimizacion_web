@@ -1,3 +1,5 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
 .cyanButton {
     background-color: rgb(25, 149, 173);
     color: rgb(241, 241, 242);
@@ -12,6 +14,15 @@
     border-style: solid;
     border-width: 1px;
     text-decoration: none;
+    transition: 0.5s;
+}
+
+.cyanButton:hover{
+    color: rgb(25, 149, 173);
+    background-color: rgb(241, 241, 242);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(25, 149, 173);
 }
 
 body {
@@ -32,9 +43,22 @@ body {
     border-color: initial;
     border-image: initial;
     text-decoration: none;
+    position: relative;
+    transition: 0.5s;
+
 }
 
-#linkBox {
+
+
+#searchButton:hover {
+   color: rgb(241, 241, 242);
+   background-color: rgb(25, 149, 173);
+   border-width: 1px;
+   border-style: solid;
+   border-color: rgb(241, 241, 242);
+}
+
+.linkBox {
     width: 210px;
     height: 35px;
 }
@@ -62,7 +86,7 @@ body {
 
 .show {display: block;}
 
-#linkContainer {
+#ContenedorCRUD {
     background-color: rgb(161, 214, 210);
     height: 592px;
     width: 310px;
@@ -73,6 +97,7 @@ body {
     border-width: 1px;
     margin: 10px;
     padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #readerContainer {
     margin-top: 15px;
@@ -81,7 +106,7 @@ body {
     width: 100%;
 }
 #currentSort {
-    margin-left: 5px;
+    margin-left: 8px;
     margin-right: 5px;
 }
 .dropdown-sort {
@@ -99,20 +124,22 @@ body {
 
 
 .dropbtn {
-    background-color: azure;
-    height: 30px;
-    width: 30px;
+    background: url(Pictures/down-arrow.png);
+    height: 40px;
+    width: 20px;
     font-size: 16px;
     cursor: pointer;
     border-width: initial;
     border-style: none;
     border-color: initial;
     border-image: initial;
+    padding-bottom: 30px;
 }
 .sortByText {
     color: black;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
+    margin-left: 8px;
 }
 
 #linkTitle {
@@ -135,6 +162,7 @@ body {
     background-color: rgb(25, 149, 173);
     display: flex;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }
 #browser {
     padding-left: 400px;
@@ -149,6 +177,7 @@ body {
     font-size: 30px;
     margin: 10px 10px 10px 30px;
     padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #container {
     display: flex;
@@ -158,9 +187,11 @@ body {
     margin-top: 31px;
     margin-left: 10px;
 }
-#headLinkCont {
+#EncabezadoCRUD{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    height: 80px;
 }
 #headNewsCont {
     display: flex;
@@ -171,4 +202,32 @@ body {
     color: white;
     padding-left: 24px;
     font-size: 20px;
+}
+
+#addButton{
+    margin-left:10px ;
+}
+
+.left{
+    display: flex;
+    justify-content: space-between ;
+}
+
+.linkNameText{
+    font-size:15px;
+    font-weight: bold;
+    margin-left: 15px;
+    padding-top: 10px;
+}
+
+.removeText{
+    font-size:15px;
+    text-decoration: none;
+    padding-top: 8px;
+    color: white;
+    transition: 0.5s;
+}
+
+.removeText:hover{
+    color: black;
 }
