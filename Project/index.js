@@ -9,6 +9,7 @@ window.onload = function () {
     links: [
       "https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml",
       "http://rss.cnn.com/rss/edition_world.rss",
+      "https://www.thesun.co.uk/news/worldnews/feed/",
     ],
   });
 

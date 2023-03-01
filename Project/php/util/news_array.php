@@ -14,12 +14,17 @@ function getNewsArray($url){
             $description = (string)$val->description;
             $date = (string)$val->pubDate;
             $link = (string) $val->link;
+            $categories = (string)$val->category;
+
+           // print_r("{" . $title . "cat" . $categories . "\n" . "}");
 
             array_push($news, array(
             "title" => $title,
             "description" => $description,
             "date" => $date,
-            "link" => $link));
+            "link" => $link, 
+            "category" => $categories)
+        );
         }
 
     }catch(Exception $e){
@@ -27,9 +32,9 @@ function getNewsArray($url){
             "title" => $url,
             "description" => $e->getMessage(),
             "date" => $e->getMessage(),
-            "link" => $e->getMessage()));
+            "link" => $e->getMessage(),
+            "category" => $e->getMessage()));
     }
-
     return $news;
    }
 ?>
