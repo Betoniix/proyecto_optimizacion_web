@@ -13,7 +13,6 @@ function getLinks(){
     
     try {
         
-        
         $links_query = $mysql->prepare("SELECT * FROM links ORDER BY RAND()");
         $links_query->execute();
         $result = $links_query->get_result();
@@ -44,7 +43,8 @@ function transformLinksJson(){
   
 //Se describe en transformLinksJson()
 function getURLLinks(){
-    $mysql = conectarSQLServer();
+    $handler = new MySqlHandler();
+    $mysql = $handler->connection();
     $resultado = $mysql->query("SELECT Link FROM links");
     while($registro = $resultado->fetch_assoc()){
         $urllinks[] = $registro;
