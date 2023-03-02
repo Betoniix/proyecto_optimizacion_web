@@ -7,6 +7,8 @@ const fragment_news = document.createDocumentFragment();
 
 
 function loadNews() {
+    document.getElementById("sample").innerHTML = ""
+
     const xhttp = new XMLHttpRequest();
     
     xhttp.onreadystatechange = function() {
@@ -26,6 +28,33 @@ function loadNews() {
     
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(`type=${orderType}`);
+}
+
+function searchWord() {
+
+    document.getElementById("sample").innerHTML = ""
+
+    const word = document.getElementById("newsBox").value;
+    const xhttp = new XMLHttpRequest();
+    
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            deploySearch (data,word);
+        }
+    };
+    
+    const orderType = document.getElementById("currentSort").textContent.toLowerCase();
+    
+    xhttp.open(
+        "POST",
+        "http://localhost/proyecto_optimizacion_web/Project/php/by_name.php",
+        true
+    );
+    
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(`type=${orderType}`);
+
 }
 
 function SortingBy() {
@@ -67,6 +96,59 @@ function byCategory() {
 
 
 
+const deploySearch = function (datos, word){
+
+
+    for(let item of datos){
+
+   
+
+        if (item[1].indexOf(word) !== -1) {
+            templateCard.getElementById('s-title').innerHTML= item[1];
+            templateCard.getElementById('s-cat').innerHTML= item[6]; 
+            templateCard.getElementById('s-desc').innerHTML= item [2];
+            templateCard.getElementById('s-url').innerHTML= "URL:  " + item [4];
+            templateCard.getElementById('s-date').innerHTML = item[3];
+    
+            const clone = templateCard.cloneNode(true);
+            fragment_news.appendChild(clone);
+
+            console.log(item[1]);
+           
+        }else if (item[2].indexOf(word) !== -1){
+            templateCard.getElementById('s-title').innerHTML= item[1];
+            templateCard.getElementById('s-cat').innerHTML= item[6]; 
+            templateCard.getElementById('s-desc').innerHTML= item [2];
+            templateCard.getElementById('s-url').innerHTML= "URL:  " + item [4];
+            templateCard.getElementById('s-date').innerHTML = item[3];
+    
+            const clone = templateCard.cloneNode(true);
+            fragment_news.appendChild(clone);
+
+            console.log(item[2]);
+
+        } else if (item[6].indexOf(word) !== -1){
+            templateCard.getElementById('s-title').innerHTML= item[1];
+            templateCard.getElementById('s-cat').innerHTML= item[6]; 
+            templateCard.getElementById('s-desc').innerHTML= item [2];
+            templateCard.getElementById('s-url').innerHTML= "URL:  " + item [4];
+            templateCard.getElementById('s-date').innerHTML = item[3];
+    
+            const clone = templateCard.cloneNode(true);
+            fragment_news.appendChild(clone);
+
+            console.log(item[6]);
+        }
+
+
+        
+      
+    
+    
+    } card_news.appendChild(fragment_news);
+  
+
+}
 
 const deployCards = function(datos){
 

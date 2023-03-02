@@ -10,11 +10,9 @@
     <div id="headContainer">
         <div id="headTitle"> <a id="linkTitle" href="Index.php">RSS Reader </a></div>
         <div id="browser">
-            <form action="" method="get">
+            
             <input id="newsBox" type="text" placeholder="News">
-            <input id="searchButton" type="submit" value="SEARCH "> </button>
-            </form>
-          
+            <button id="searchButton" onclick="searchWord()"> SEARCH </button>
         </div>
     </div>
 
