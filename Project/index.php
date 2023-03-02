@@ -72,7 +72,8 @@
                         <div id="sortings" class="dropdown-sort-content">
                             <button onclick="byDate()" class="sortbtn">Date</button>
                             <button onclick="byTitle()" class="sortbtn">Title</button>
-                            <button onclick="byRelevance()" class="sortbtn">Relevance</button>
+                            <button onclick="byDescription()" class="sortbtn">Description</button>
+                            <button onclick="byCategory()" class="sortbtn">Category</button>
                         </div>
                     </div>
 
@@ -88,6 +89,6 @@
 
     </div>
 
-    <script src="indexMethods.js"></script>
+    <script src="indexMethods.js?V=1.0.1"></script>
 </body>
 </html>

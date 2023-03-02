@@ -4,14 +4,17 @@ function loadNews() {
     xhttp.onload = function () {
         document.getElementById("readerContainer").innerHTML = this.responseText;
     };
+    
+    const orderType = document.getElementById("currentSort").textContent.toLowerCase();
+    
     xhttp.open(
-        "GET",
-        "http://localhost/proyecto_optimizacion_web/Project/php/RetrieveNews.php",
+        "POST",
+        "http://localhost/proyecto_optimizacion_web/Project/php/by_name.php",
         true
     );
     
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
+    xhttp.send(`type=${orderType}`);
 }
 
 function SortingBy() {
@@ -40,6 +43,9 @@ function byTitle() {
     document.getElementById("currentSort").innerHTML = "Title";
 }
 
-function byRelevance() {
-    document.getElementById("currentSort").innerHTML = "Relevance";
+function byDescription() {
+    document.getElementById("currentSort").innerHTML = "Description";
+}
+function byCategory() {
+    document.getElementById("currentSort").innerHTML = "Category";
 }
