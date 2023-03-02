@@ -3,7 +3,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 class MySqlHandler {
     private $host="localhost";
-    private $port=3306;
+    private $port=3305;
     private $user="root";
     private $password="";
     private $dbname="opti_rss";

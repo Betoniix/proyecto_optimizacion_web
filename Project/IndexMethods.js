@@ -1,3 +1,19 @@
+function loadNews() {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function () {
+        document.getElementById("readerContainer").innerHTML = this.responseText;
+    };
+    xhttp.open(
+        "GET",
+        "http://localhost/proyecto_optimizacion_web/Project/php/RetrieveNews.php",
+        true
+    );
+    
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send();
+}
+
 function SortingBy() {
     document.getElementById("sortings").classList.toggle("show");
   }

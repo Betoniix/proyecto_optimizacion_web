@@ -3,7 +3,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="IndexStyles.css">
-    <script src="indexMethods.js"></script>
     <title>RSS_Reader</title>
 </head>
 <body>
@@ -24,9 +23,8 @@
             <div id="EncabezadoCRUD">
                 <form action="php/SaveNews.php" method="POST">
                     <input type="text" id="NombreURL"  class="linkBox" placeholder="RSS name" autocomplete="off" name="NombreURL">        
-                    <input type="text" id="CadenaURL" class="linkBox" placeholder="RSS Link" autocomplete="off" name="CadenaURL"  >
+                    <input type="text" id="CadenaURL" class="linkBox" placeholder="RSS Link" autocomplete="off" name="CadenaURL">
                     <input type="submit"  id="addButton" class="cyanButton" name="btn_Agregar_CRUD" value="ADD+" class="cyanButton">
-                     
                 </form>
             </div>
              <div id="ContenidoCRUD">
@@ -79,7 +77,7 @@
                     </div>
 
                 </div>
-                <button id="updatebtn" class="cyanButton"> UPDATE </button>
+                <button onclick="loadNews()" id="updatebtn" class="cyanButton"> UPDATE </button>
             </div>
 
             <div id="readerContainer">
@@ -90,5 +88,6 @@
 
     </div>
 
-
-</body></html>
+    <script src="indexMethods.js"></script>
+</body>
+</html>

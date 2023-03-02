@@ -2,17 +2,17 @@
 include_once('./util/news_array.php');
 include_once('./util/mysql_handler.php');
     
-$nombreUrl = $_POST["NombreURL"];
-$cadenaUrl = $_POST["CadenaURL"];
+$nombreUrl = $_POST['NombreURL'];
+$cadenaUrl = $_POST['CadenaURL'];
 $db->begin_transaction();
 
 try {
     $host_exist = $db->prepare("SELECT IF(EXISTS(SELECT ID FROM links WHERE Link = ?), 1, 0)");
-    $news_query = $db->prepare("INSERT INTO news(title, description, pubdate, link, id_host, category) VALUES (?,?,?,?,?,?)");
+    $news_query = $db->prepare("INSERT INTO news (title, description, pubdate, link, id_host, category) VALUES (?,?,?,?,?,?)");
     $host_query = $db->prepare("INSERT INTO links (NombreLink, Link) VALUES (?,?)");
     $hostID_query = $db->prepare("SELECT ID FROM links WHERE Link = ?");
     
-    $host_query->bind_param("s", $nombreUrl, $cadenaUrl);
+    $host_query->bind_param("ss", $nombreUrl, $cadenaUrl);
     $host_query->execute();
 
     $hostID_query->bind_param("s", $cadenaUrl);
@@ -24,7 +24,7 @@ try {
     $fetched = getNewsArray($cadenaUrl);
         
     foreach($fetched as $new){
-        $news_query->bind_param("ssssis", $new["title"], $new["description"],$new["date"],$new["link"], $host_id["id"],$new["category"]);
+        $news_query->bind_param("ssssis", $new["title"], $new["description"],$new["date"],$new["link"], $host_id, $new["category"]);
         $news_query->execute();
     }
     
@@ -34,4 +34,6 @@ try {
     $db->rollback();
     echo $exception;
 }
+
+header("location: ../index.php");
 ?>
