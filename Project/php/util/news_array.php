@@ -12,10 +12,16 @@ function getNewsArray($url){
         foreach($xml->channel->item as $val){
             $title = (string)$val->title;
             $description = (string)$val->description;
-            $date = (string)$val->pubDate;
+            $date = date('d/m/Y', strtotime((string)$val->pubDate));
             $link = (string) $val->link;
             print_r("{" .trim((string)$val->category) ."}". "\n\n");
             $categories = (!empty(trim((string)$val->category)) && !is_null(trim((string)$val->category))) ? (string)$val->category : "none";
+            
+            /*
+            $fecha = "27 Feb 2023 03:19";
+            $fecha_formateada = date('d/m/Y', strtotime($fecha));
+            echo $fecha_formateada;
+            */
 
             array_push($news, array(
             "title" => $title,

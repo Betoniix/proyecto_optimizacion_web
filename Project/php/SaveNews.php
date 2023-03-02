@@ -9,6 +9,7 @@ $cadenaUrl = $_POST['CadenaURL'];
 $db->begin_transaction();
 
 try {
+    $news_exist = $db->prepare("SELECT IF(EXISTS(SELECT id FROM news WHERE title = ?), 1, 0) AS result");
     $host_exist = $db->prepare("SELECT IF(EXISTS(SELECT ID FROM links WHERE Link = ?), 1, 0) AS result");
     $news_query = $db->prepare("INSERT INTO news (title, description, pubdate, link, id_host, category) VALUES (?,?,?,?,?,?)");
     $host_query = $db->prepare("INSERT INTO links (NombreLink, Link) VALUES (?,?)");
@@ -22,22 +23,29 @@ try {
 
     if(!$exist_link["result"]){
         $host_query->bind_param("ss", $nombreUrl, $cadenaUrl);
-        $host_query->execute();
-        
+        $host_query->execute();    
     }
 
     $hostID_query->bind_param("s", $cadenaUrl);
-        $hostID_query->execute();
-        
-        $result = $hostID_query->get_result();
-        $host_id = $result->fetch_assoc();
-
-        $fetched = getNewsArray($cadenaUrl);
+    $hostID_query->execute();
     
-        foreach($fetched as $new){    
-            $news_query->bind_param("ssssis", $new["title"], $new["description"],$new["date"],$new["link"], $host_id["ID"], $new["category"]);
+    $result = $hostID_query->get_result();
+    $host_id = $result->fetch_assoc();
+    
+    $fetched = getNewsArray($cadenaUrl);
+    
+    foreach($fetched as $new){
+        $news_exist->bind_param("s", $new["title"]);
+        $news_exist->execute();
+        
+        $result = $news_exist->get_result();
+        $wasAdded = $result->fetch_assoc();
+        
+        if(!$wasAdded["result"]){
+            $news_query->bind_param("ssssis", $new["title"], $new["description"],$new["date"],$new["link"], $host_id["ID"],$new["category"]);
             $news_query->execute();
         }
+    }
 
     $db->commit();
 
