@@ -22,7 +22,7 @@
 
         <div id="ContenedorCRUD">
             <div id="EncabezadoCRUD">
-                <form action="./AgregarLink.php" method="POST">
+                <form action="php/SaveNews.php" method="POST">
                     <input type="text" id="NombreURL"  class="linkBox" placeholder="RSS name" autocomplete="off" name="NombreURL">        
                     <input type="text" id="CadenaURL" class="linkBox" placeholder="RSS Link" autocomplete="off" name="CadenaURL"  >
                     <input type="submit"  id="addButton" class="cyanButton" name="btn_Agregar_CRUD" value="ADD+" class="cyanButton">

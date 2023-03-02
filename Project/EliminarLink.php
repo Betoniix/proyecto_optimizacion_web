@@ -16,7 +16,7 @@ $mysqli = conectarSQLServer();
 if(!$mysqli){
        $resultado =  "No se pudo realizar la conexión PHP - MySQL";
     }else{             
-        $sqlSentence = "DELETE FROM `links` WHERE ID= '$idLink' ";
+        $sqlSentence = "DELETE FROM `links` WHERE ID = '$idLink' ";
         echo $sqlSentence;
         $inserta = $mysqli->query($sqlSentence);
         if($inserta){

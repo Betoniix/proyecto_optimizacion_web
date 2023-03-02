@@ -8,7 +8,7 @@ include_once('./util/mysql_handler.php');
 
     try {
         $host_exist = $db->prepare("SELECT IF(EXISTS(SELECT id FROM host WHERE host_link = ?), 1, 0)");
-        $news_query = $db->prepare("INSERT INTO news(title,description,pubdate,link,id_host,category) VALUES (?,?,?,?,?,?)");
+        $news_query = $db->prepare("INSERT INTO news(title, description, pubdate, link, id_host, category) VALUES (?,?,?,?,?,?)");
         $host_query = $db->prepare("INSERT INTO host (host_link) VALUES (?)");
         $hostID_query = $db->prepare("SELECT id FROM host WHERE host_link = ?");
 

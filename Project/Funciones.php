@@ -1,24 +1,20 @@
 <?php
 
-function conectarSQLServer(){
-        $mysql = new mysqli();
-         $mysql = new mysqli('localhost','root','','rsscrud','3306');
-        //Revisar que no haya fallado la conexión 
-        if($mysql->connect_errno != 0){
-            return $mysql->connect_errno;
-        }else{
-            return $mysql;
-        }
-    }
-    //Con esta función se obtienen TODAS las columnas de cada link de la BD(Nombre del link, su url e ID)
-  function getLinks(){
-        $mysql = conectarSQLServer();
+include_once('./php/util/mysql_handler.php');
+
+//Con esta función se obtienen TODAS las columnas de cada link de la BD(Nombre del link, su url e ID)
+  
+function getLinks(){
+        //$mysql = conectarSQLServer();
+        $handler = new MySqlHandler();
+        $mysql = $handler->connection();
         $resultado = $mysql->query("SELECT * FROM links ORDER BY RAND()");
         while($registro = $resultado->fetch_assoc()){
             $links[] = $registro;
         }
         return $links;
     }
+
 //Aquí se convierten todos los LINKS UNICAMENTE (sin ID ni nombre) a JSON
   function transformLinksJson(){
       //getURLLinks sirve para obtener unicamente el link (http://....) sin las demás columnas de la tabla.
