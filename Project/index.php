@@ -10,8 +10,11 @@
     <div id="headContainer">
         <div id="headTitle"> <a id="linkTitle" href="Index.php">RSS Reader </a></div>
         <div id="browser">
+            <form action="" method="get">
             <input id="newsBox" type="text" placeholder="News">
-            <button id="searchButton"> SEARCH </button>
+            <input id="searchButton" type="submit" value="SEARCH "> </button>
+            </form>
+          
         </div>
     </div>
 
@@ -22,7 +25,7 @@
         <div id="ContenedorCRUD">
             <div id="EncabezadoCRUD">
                 <form action="php/SaveNews.php" method="POST">
-                    <input type="text" id="NombreURL"  class="linkBox" placeholder="RSS name" autocomplete="off" name="NombreURL">        
+                    <input type="text" id="NombreURL"  class="linkBox" placeholder="RSS Name" autocomplete="off" name="NombreURL">        
                     <input type="text" id="CadenaURL" class="linkBox" placeholder="RSS Link" autocomplete="off" name="CadenaURL">
                     <input type="submit"  id="addButton" class="cyanButton" name="btn_Agregar_CRUD" value="ADD+" class="cyanButton">
                 </form>
@@ -82,8 +85,21 @@
             </div>
 
             <div id="readerContainer">
-                Generación Dinámica
+                <div id="sample"></div>
             </div>
+
+            <template id="template-card">
+                <div class="news-card">
+                    <div id="n-text">
+                        <div id="s-title"> </div>
+                        <div id="s-cat"> </div>
+                        <div id="s-desc">  </div>
+                        <div id="s-url">   </div>
+                        <div id="s-date">  </div>
+                    </div>
+                </div>
+            
+            </template>
 
         </div>
 

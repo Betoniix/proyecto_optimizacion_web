@@ -1,10 +1,19 @@
 window.onload = function(){loadNews();};
 
+
+const card_news = document.getElementById('sample');
+const templateCard = document.getElementById('template-card').content;
+const fragment_news = document.createDocumentFragment();
+
+
 function loadNews() {
     const xhttp = new XMLHttpRequest();
-
-    xhttp.onload = function () {
-        document.getElementById("readerContainer").innerHTML = this.responseText;
+    
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            deployCards(data);
+        }
     };
     
     const orderType = document.getElementById("currentSort").textContent.toLowerCase();
@@ -55,3 +64,29 @@ function byCategory() {
     document.getElementById("currentSort").innerHTML = "Category";
     loadNews();
 }
+
+
+
+
+const deployCards = function(datos){
+
+    
+    for(let item of datos){
+        
+        templateCard.getElementById('s-title').innerHTML= item[1];
+        templateCard.getElementById('s-cat').innerHTML= item[6]; 
+        templateCard.getElementById('s-desc').innerHTML= item [2];
+        templateCard.getElementById('s-url').innerHTML= "URL:  " + item [4];
+        //templateCard.getElementById('a-url').setAttribute('href', item[4])
+       
+        templateCard.getElementById('s-date').innerHTML = item[3];
+
+
+        const clone = templateCard.cloneNode(true);
+        fragment_news.appendChild(clone);
+        
+    }
+    
+    card_news.appendChild(fragment_news);
+
+};
