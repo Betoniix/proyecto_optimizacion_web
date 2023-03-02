@@ -1,3 +1,5 @@
+window.onload = function(){loadNews();};
+
 function loadNews() {
     const xhttp = new XMLHttpRequest();
 
@@ -37,15 +39,19 @@ function SortingBy() {
 
 function byDate() {
     document.getElementById("currentSort").innerHTML = "Date";
+    loadNews();
 }
 
 function byTitle() {
     document.getElementById("currentSort").innerHTML = "Title";
+    loadNews();
 }
 
 function byDescription() {
     document.getElementById("currentSort").innerHTML = "Description";
+    loadNews();
 }
 function byCategory() {
     document.getElementById("currentSort").innerHTML = "Category";
+    loadNews();
 }

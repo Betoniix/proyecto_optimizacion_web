@@ -22,9 +22,9 @@ try {
     $host_id = $result->fetch_assoc();
 
     $fetched = getNewsArray($cadenaUrl);
-        
+    print_r($host_id);
     foreach($fetched as $new){
-        $news_query->bind_param("ssssis", $new["title"], $new["description"],$new["date"],$new["link"], $host_id, $new["category"]);
+        $news_query->bind_param("ssssis", $new["title"], $new["description"],$new["date"],$new["link"], $host_id["ID"], $new["category"]);
         $news_query->execute();
     }
     

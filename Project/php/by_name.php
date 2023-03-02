@@ -13,7 +13,7 @@
         $stmp->execute();
         
         $result = $stmp->get_result();
-        $data = $result->fetch_assoc();
+        $data = $result->fetch_all();
         echo json_encode($data);
         
         $db->commit();
