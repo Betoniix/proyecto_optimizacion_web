@@ -40,7 +40,7 @@
                             <div class = "product">
                                 <div class = "left">
                                    
-                                    <p class= "linkNameText">  <?php echo $product['NombreLink']?> </p>  <a class="removeText" href="EliminarLink.php?ID=<?php echo urlencode($product['ID']);?>">Remove</a>
+                                    <p class= "linkNameText">  <?php echo $product['NombreLink']?> </p>
                                     <!-- <p class = "Link">  <?php echo $product['Link']?></p> --> 
                                 </div>
                             </div>
@@ -52,17 +52,6 @@
         </div>
 
 
-        <!--
-        <div id="linkContainer">
-            <div id="headLinkCont">
-                <input id="linkNameBox" class="linkBox" type="text" placeholder="RSS Name"> <br>
-                <input id="linkDirBox" class="linkBox" type="text" placeholder="RSS Link">
-                <button id="addButton" class="cyanButton"> ADD + </button>
-            </div>
-            <p class="adli"> Added links </p>
-
-        </div>
-                    -->
         <div id="newsContainer"> 
             <div id="headNewsCont">
                 <div id="chooseSort">
