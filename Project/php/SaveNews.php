@@ -2,7 +2,14 @@
 include_once('./util/news_array.php');
 include_once('./util/mysql_handler.php');
 
-
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if(empty($_POST['NombreURL'])){
+        header("location: ../index.php");
+    }
+    if(empty($_POST['CadenaURL'])){
+        header("location: ../index.php");
+    }
+}
 $nombreUrl = $_POST['NombreURL'];
 $cadenaUrl = $_POST['CadenaURL'];
 

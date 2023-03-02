@@ -89,6 +89,6 @@
 
     </div>
 
-    <script src="indexMethods.js?V=1.0.2"></script>
+    <script src="indexMethods.js?V=1.0.3"></script>
 </body>
 </html>
