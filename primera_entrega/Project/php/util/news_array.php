@@ -16,13 +16,17 @@ function getNewsArray($url){
             $link = (string) $val->link;
             print_r("{" .trim((string)$val->category) ."}". "\n\n");
             $categories = (!empty(trim((string)$val->category)) && !is_null(trim((string)$val->category))) ? (string)$val->category : "none";
+            $img = (string) $val->thumbnail;
+            print_r($img);
 
             array_push($news, array(
             "title" => $title,
             "description" => $description,
             "date" => $date,
             "link" => $link, 
-            "category" => $categories)
+            "category" => $categories,
+            "img" => $img
+            )
         );
         }
 
@@ -32,7 +36,9 @@ function getNewsArray($url){
             "description" => $e->getMessage(),
             "date" => $e->getMessage(),
             "link" => $e->getMessage(),
-            "category" => $e->getMessage()));
+            "category" => $e->getMessage(),
+            "img" => "none"
+        ));
     }
     return $news;
    }

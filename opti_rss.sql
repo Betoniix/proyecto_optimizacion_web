@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 02-03-2023 a las 04:16:07
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-03-2023 a las 07:52:08
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -54,7 +54,8 @@ CREATE TABLE `news` (
   `pubdate` text NOT NULL,
   `link` varchar(500) NOT NULL,
   `id_host` int(11) NOT NULL,
-  `category` text NOT NULL
+  `category` text NOT NULL,
+  `img` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
