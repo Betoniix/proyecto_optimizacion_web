@@ -7,7 +7,7 @@ const fragment_news = document.createDocumentFragment();
 
 
 function loadNews() {
-    document.getElementById("sample").innerHTML = ""
+    document.getElementById("sample").innerHTML = "";
 
     const xhttp = new XMLHttpRequest();
     
@@ -22,7 +22,7 @@ function loadNews() {
     
     xhttp.open(
         "POST",
-        "http://localhost/proyecto_optimizacion_web/primera_entrega/Project/php/by_name.php",
+        "http://localhost/proyecto_optimizacion_web/Project/php/by_name.php",
         true
     );
     
