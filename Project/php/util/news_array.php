@@ -14,15 +14,20 @@ function getNewsArray($url){
             $description = (string)$val->description;
             $date = date('d/m/Y', strtotime((string)$val->pubDate));
             $link = (string) $val->link;
-            print_r("{" .trim((string)$val->category) ."}". "\n\n");
+
             $categories = (!empty(trim((string)$val->category)) && !is_null(trim((string)$val->category))) ? (string)$val->category : "none";
+            
+            $thumbnail = (string) $val->children('media', true);
+            $img = $thumbnail ? $thumbnail->thumbnail[0]->attributes()->url : "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg";
 
             array_push($news, array(
             "title" => $title,
             "description" => $description,
             "date" => $date,
             "link" => $link, 
-            "category" => $categories)
+            "category" => $categories,
+            "img" => $img
+            )
         );
         }
 
@@ -32,8 +37,9 @@ function getNewsArray($url){
             "description" => $e->getMessage(),
             "date" => $e->getMessage(),
             "link" => $e->getMessage(),
-            "category" => $e->getMessage()));
+            "category" => $e->getMessage(),
+            "img" => "none"
+        ));
     }
     return $news;
    }
-?>

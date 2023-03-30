@@ -7,7 +7,7 @@ const fragment_news = document.createDocumentFragment();
 
 
 function loadNews() {
-    document.getElementById("sample").innerHTML = ""
+    document.getElementById("sample").innerHTML = "";
 
     const xhttp = new XMLHttpRequest();
     

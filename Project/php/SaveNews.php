@@ -18,7 +18,7 @@ $db->begin_transaction();
 try {
     $news_exist = $db->prepare("SELECT IF(EXISTS(SELECT id FROM news WHERE title = ?), 1, 0) AS result");
     $host_exist = $db->prepare("SELECT IF(EXISTS(SELECT ID FROM links WHERE Link = ?), 1, 0) AS result");
-    $news_query = $db->prepare("INSERT INTO news (title, description, pubdate, link, id_host, category) VALUES (?,?,?,?,?,?)");
+    $news_query = $db->prepare("INSERT INTO news (title, description, pubdate, link, id_host, category, img) VALUES (?,?,?,?,?,?,?)");
     $host_query = $db->prepare("INSERT INTO links (NombreLink, Link) VALUES (?,?)");
     $hostID_query = $db->prepare("SELECT ID FROM links WHERE Link = ?");
     
@@ -49,7 +49,7 @@ try {
         $wasAdded = $result->fetch_assoc();
         
         if(!$wasAdded["result"]){
-            $news_query->bind_param("ssssis", $new["title"], $new["description"],$new["date"],$new["link"], $host_id["ID"],$new["category"]);
+            $news_query->bind_param("ssssiss", $new["title"], $new["description"],$new["date"],$new["link"], $host_id["ID"],$new["category"], $new["img"]);
             $news_query->execute();
         }
     }
