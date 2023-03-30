@@ -10,8 +10,9 @@
     <div id="headContainer">
         <div id="headTitle"> <a id="linkTitle" href="Index.php">RSS Reader </a></div>
         <div id="browser">
+            
             <input id="newsBox" type="text" placeholder="News">
-            <button id="searchButton"> SEARCH </button>
+            <button id="searchButton" onclick="searchWord()"> SEARCH </button>
         </div>
     </div>
 
@@ -22,7 +23,7 @@
         <div id="ContenedorCRUD">
             <div id="EncabezadoCRUD">
                 <form action="php/SaveNews.php" method="POST">
-                    <input type="text" id="NombreURL"  class="linkBox" placeholder="RSS name" autocomplete="off" name="NombreURL">        
+                    <input type="text" id="NombreURL"  class="linkBox" placeholder="RSS Name" autocomplete="off" name="NombreURL">        
                     <input type="text" id="CadenaURL" class="linkBox" placeholder="RSS Link" autocomplete="off" name="CadenaURL">
                     <input type="submit"  id="addButton" class="cyanButton" name="btn_Agregar_CRUD" value="ADD+" class="cyanButton">
                 </form>
@@ -39,7 +40,7 @@
                             <div class = "product">
                                 <div class = "left">
                                    
-                                    <p class= "linkNameText">  <?php echo $product['NombreLink']?> </p>  <a class="removeText" href="EliminarLink.php?ID=<?php echo urlencode($product['ID']);?>">Remove</a>
+                                    <p class= "linkNameText">  <?php echo $product['NombreLink']?> </p>
                                     <!-- <p class = "Link">  <?php echo $product['Link']?></p> --> 
                                 </div>
                             </div>
@@ -51,17 +52,6 @@
         </div>
 
 
-        <!--
-        <div id="linkContainer">
-            <div id="headLinkCont">
-                <input id="linkNameBox" class="linkBox" type="text" placeholder="RSS Name"> <br>
-                <input id="linkDirBox" class="linkBox" type="text" placeholder="RSS Link">
-                <button id="addButton" class="cyanButton"> ADD + </button>
-            </div>
-            <p class="adli"> Added links </p>
-
-        </div>
-                    -->
         <div id="newsContainer"> 
             <div id="headNewsCont">
                 <div id="chooseSort">
@@ -82,8 +72,21 @@
             </div>
 
             <div id="readerContainer">
-                Generación Dinámica
+                <div id="sample"></div>
             </div>
+
+            <template id="template-card">
+                <div class="news-card">
+                    <div id="n-text">
+                        <div id="s-title"> </div>
+                        <div id="s-cat"> </div>
+                        <div id="s-desc">  </div>
+                        <div id="s-url">   </div>
+                        <div id="s-date">  </div>
+                    </div>
+                </div>
+            
+            </template>
 
         </div>
 
