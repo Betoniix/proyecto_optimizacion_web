@@ -14,10 +14,9 @@ function getNewsArray($url){
             $description = (string)$val->description;
             $date = date('d/m/Y', strtotime((string)$val->pubDate));
             $link = (string) $val->link;
-            print_r("{" .trim((string)$val->category) ."}". "\n\n");
+            //print_r("{" .trim((string)$val->category) ."}". "\n\n");
             $categories = (!empty(trim((string)$val->category)) && !is_null(trim((string)$val->category))) ? (string)$val->category : "none";
             $img = (string) $val->thumbnail;
-            print_r($img);
 
             array_push($news, array(
             "title" => $title,
