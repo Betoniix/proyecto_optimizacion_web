@@ -17,8 +17,14 @@ function getNewsArray($url){
 
             $categories = (!empty(trim((string)$val->category)) && !is_null(trim((string)$val->category))) ? (string)$val->category : "none";
             
-            $thumbnail = (string) $val->children('media', true);
-            $img = $thumbnail ? $thumbnail->thumbnail[0]->attributes()->url : "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg";
+            $thumbnail = $val->children('media', true);
+            
+            if (!is_null($thumbnail) && isset($thumbnail->thumbnail[0])) {
+                $img = (string) $thumbnail->thumbnail[0]->attributes()->url;
+            } else {
+                $img = "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg";
+            }
+            //$img = (!is_null($thumbnail)) ? (string) $thumbnail->thumbnail[0]->attributes()->url : "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg";
 
             array_push($news, array(
             "title" => $title,
@@ -43,3 +49,4 @@ function getNewsArray($url){
     }
     return $news;
    }
+?>
