@@ -6,6 +6,7 @@
     <title>RSS_Reader</title>
 </head>
 <body>
+    
   
     <div id="headContainer">
         <div id="headTitle"> <a id="linkTitle" href="Index.php">RSS Reader </a></div>
@@ -19,7 +20,6 @@
     
 
     <div id="container">
-
         <div id="ContenedorCRUD">
             <div id="EncabezadoCRUD">
                 <form action="php/SaveNews.php" method="POST">
@@ -92,6 +92,6 @@
 
     </div>
 
-    <script src="indexMethods.js?V=1.0.3"></script>
+    <script src="indexMethods.js?V=1.0.4"></script>
 </body>
 </html>

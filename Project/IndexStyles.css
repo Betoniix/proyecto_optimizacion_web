@@ -24,11 +24,13 @@
     border-style: solid;
     border-color: rgb(25, 149, 173);
 }
-
+/*
 body {
     background-color: rgb(241, 241, 242);
+    background-image: url("newspapers.jpg");
+    
 }
-
+*/
 #searchButton {
     background-color: rgb(241, 241, 242);
     color: rgb(25, 149, 173);
@@ -97,7 +99,8 @@ body {
     border-width: 1px;
     margin: 10px;
     padding: 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 #readerContainer {
     display: flex;
@@ -163,7 +166,8 @@ body {
     background-color: rgb(25, 149, 173);
     display: flex;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    /* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; */
+    
 }
 #browser {
     padding-left: 400px;
@@ -178,15 +182,36 @@ body {
     font-size: 30px;
     margin: 10px 10px 10px 30px;
     padding: 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 #container {
     display: flex;
     width: initial;
     height: auto;
-    background-color: initial;
-    margin-top: 31px;
-    margin-left: 10px;
+    background-image: url("newspapers.jpg");
+    background-size: cover;
+    margin: 0;
+    position: relative; /* asegúrese de que el contenedor tenga una posición relativa */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    
+}
+
+#container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* ajuste el color y la opacidad según sea necesario */
+    
+}
+
+#container > * {
+    position: relative; /* asegúrese de que todos los elementos secundarios tengan una posición relativa */
+    
 }
 #EncabezadoCRUD{
     display: flex;
