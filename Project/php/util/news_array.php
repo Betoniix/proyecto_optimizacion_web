@@ -24,8 +24,7 @@ function getNewsArray($url){
             } else {
                 $img = "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg";
             }
-            //$img = (!is_null($thumbnail)) ? (string) $thumbnail->thumbnail[0]->attributes()->url : "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg";
-
+            
             array_push($news, array(
             "title" => $title,
             "description" => $description,

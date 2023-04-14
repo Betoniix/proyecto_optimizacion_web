@@ -107,6 +107,7 @@ const deploySearch = function (datos, word){
             templateCard.getElementById('s-title').innerHTML= item[1];
             templateCard.getElementById('s-cat').innerHTML= item[6]; 
             templateCard.getElementById('s-desc').innerHTML= item [2];
+            templateCard.querySelector('img').setAttribute('src', item[7]);
             templateCard.getElementById('s-url').innerHTML= "URL:  " + item [4];
             templateCard.getElementById('s-date').innerHTML = item[3];
     
@@ -119,6 +120,7 @@ const deploySearch = function (datos, word){
             templateCard.getElementById('s-title').innerHTML= item[1];
             templateCard.getElementById('s-cat').innerHTML= item[6]; 
             templateCard.getElementById('s-desc').innerHTML= item [2];
+            templateCard.querySelector('img').setAttribute('src', item[7]);
             templateCard.getElementById('s-url').innerHTML= "URL:  " + item [4];
             templateCard.getElementById('s-date').innerHTML = item[3];
     
@@ -131,6 +133,7 @@ const deploySearch = function (datos, word){
             templateCard.getElementById('s-title').innerHTML= item[1];
             templateCard.getElementById('s-cat').innerHTML= item[6]; 
             templateCard.getElementById('s-desc').innerHTML= item [2];
+            templateCard.querySelector('img').setAttribute('src', item[7]);
             templateCard.getElementById('s-url').innerHTML= "URL:  " + item [4];
             templateCard.getElementById('s-date').innerHTML = item[3];
     
@@ -158,6 +161,7 @@ const deployCards = function(datos){
         templateCard.getElementById('s-title').innerHTML= item[1];
         templateCard.getElementById('s-cat').innerHTML= item[6]; 
         templateCard.getElementById('s-desc').innerHTML= item [2];
+        templateCard.querySelector('img').setAttribute('src', item[7]);
         templateCard.getElementById('s-url').innerHTML= "URL:  " + item [4];
         //templateCard.getElementById('a-url').setAttribute('href', item[4])
        

@@ -81,6 +81,7 @@
                         <div id="s-title"></div>
                         <div id="s-cat"></div>
                         <div id="s-desc"></div>
+                        <div id="s-img"><img src="" alt="" class="card-img"> </div>
                         <div id="s-url"></div>
                         <div id="s-date"></div>
                     </div>
@@ -92,6 +93,6 @@
 
     </div>
 
-    <script src="indexMethods.js?V=1.0.5"></script>
+    <script src="indexMethods.js?V=1.0.3"></script>
 </body>
 </html>
