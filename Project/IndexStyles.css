@@ -1,3 +1,5 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
 .cyanButton {
     background-color: rgb(25, 149, 173);
     color: rgb(241, 241, 242);
@@ -12,12 +14,23 @@
     border-style: solid;
     border-width: 1px;
     text-decoration: none;
+    transition: 0.5s;
 }
 
+.cyanButton:hover{
+    color: rgb(25, 149, 173);
+    background-color: rgb(241, 241, 242);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(25, 149, 173);
+}
+/*
 body {
     background-color: rgb(241, 241, 242);
+    background-image: url("newspapers.jpg");
+    
 }
-
+*/
 #searchButton {
     background-color: rgb(241, 241, 242);
     color: rgb(25, 149, 173);
@@ -32,9 +45,22 @@ body {
     border-color: initial;
     border-image: initial;
     text-decoration: none;
+    position: relative;
+    transition: 0.5s;
+
 }
 
-#linkBox {
+
+
+#searchButton:hover {
+   color: rgb(241, 241, 242);
+   background-color: rgb(25, 149, 173);
+   border-width: 1px;
+   border-style: solid;
+   border-color: rgb(241, 241, 242);
+}
+
+.linkBox {
     width: 210px;
     height: 35px;
 }
@@ -62,7 +88,7 @@ body {
 
 .show {display: block;}
 
-#linkContainer {
+#ContenedorCRUD {
     background-color: rgb(161, 214, 210);
     height: 592px;
     width: 310px;
@@ -73,15 +99,18 @@ body {
     border-width: 1px;
     margin: 10px;
     padding: 20px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 #readerContainer {
+    display: flex;
+    justify-content: center;
     margin-top: 15px;
-    background-color: antiquewhite;
     height: 94%;
     width: 100%;
 }
 #currentSort {
-    margin-left: 5px;
+    margin-left: 8px;
     margin-right: 5px;
 }
 .dropdown-sort {
@@ -99,20 +128,22 @@ body {
 
 
 .dropbtn {
-    background-color: azure;
-    height: 30px;
-    width: 30px;
+    background-color: initial;
+    height: 40px;
+    width: 20px;
     font-size: 16px;
     cursor: pointer;
     border-width: initial;
     border-style: none;
     border-color: initial;
     border-image: initial;
+    padding-bottom: 30px;
 }
 .sortByText {
     color: black;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
+    margin-left: 8px;
 }
 
 #linkTitle {
@@ -135,6 +166,8 @@ body {
     background-color: rgb(25, 149, 173);
     display: flex;
     align-items: center;
+    /* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; */
+    
 }
 #browser {
     padding-left: 400px;
@@ -149,18 +182,42 @@ body {
     font-size: 30px;
     margin: 10px 10px 10px 30px;
     padding: 20px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 #container {
     display: flex;
     width: initial;
     height: auto;
-    background-color: initial;
-    margin-top: 31px;
-    margin-left: 10px;
+    background-image: url("newspapers.jpg");
+    background-size: cover;
+    margin: 0;
+    position: relative; /* asegúrese de que el contenedor tenga una posición relativa */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    
 }
-#headLinkCont {
+
+#container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* ajuste el color y la opacidad según sea necesario */
+    
+}
+
+#container > * {
+    position: relative; /* asegúrese de que todos los elementos secundarios tengan una posición relativa */
+    
+}
+#EncabezadoCRUD{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    height: 80px;
 }
 #headNewsCont {
     display: flex;
@@ -172,3 +229,169 @@ body {
     padding-left: 24px;
     font-size: 20px;
 }
+
+#addButton{
+    margin-left:10px ;
+}
+
+.left{
+    display: flex;
+    justify-content: space-between ;
+}
+
+.linkNameText{
+    font-size:15px;
+    font-weight: bold;
+    margin-left: 15px;
+    padding-top: 10px;
+}
+
+.removeText{
+    font-size:15px;
+    text-decoration: none;
+    padding-top: 8px;
+    color: white;
+    transition: 0.5s;
+}
+
+.removeText:hover{
+    color: black;
+}
+
+.news-card{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    height: 75%;
+    width: 90%;
+    margin: 30px;
+}
+
+#n-text{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    height: 10%;
+    padding: 20px;
+    width: 100%;
+
+    
+}
+
+#s-title{
+
+    font-size: 18px;
+    font-weight: bold;
+    width: 75%;
+    text-align: left;
+
+    display: block;
+    display: -webkit-box;
+    height: 40px;
+
+    line-height: 1;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+   
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+
+
+#s-cat{
+
+    font-size: 14px;
+    font-weight: 550;
+    width: 25%;
+    text-align: right;
+
+    display: block;
+    display: -webkit-box;
+    height: 40px;
+
+    line-height: 1;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+   
+    text-overflow: ellipsis;
+    overflow: hidden; 
+   color: rgb(25, 149, 173);
+
+}
+
+#s-desc{
+
+    font-size: 15px;
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+    height: 100px;
+
+    display: block;
+    display: -webkit-box;
+
+    line-height: 1;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+   
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+#s-url{
+
+    margin-top: 8px;
+    width: 75%;
+    font-size: 14px;
+
+    height: 50px;
+    display: block;
+    display: -webkit-box;
+
+    line-height: 1;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+   
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+#s-date{
+
+    font-size: 15px;
+    margin-top: 8px;
+    width: 25%;
+    text-align: right;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+#s-img{
+    display: flex;
+    background-color: aqua;
+    margin-bottom: 15px;
+    height: 165px;
+    width: 300px;
+    justify-content: center;
+}
+
+#s-img img{
+    box-shadow:-1px 5px 10px rgb(0 0 0 / 30%); 
+    width: 100%;
+   
+}
+
+
+#sample{
+    overflow-y: auto;
+}
+

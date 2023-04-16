@@ -10,3 +10,10 @@
   ![](.profile/jorge.jpeg "Jorge")
 - Saldivar Crespo Marco
   ![](.profile/marco.jpeg "Marco")
+
+## Ramas Importantes
+
+- Main
+  - Estaran los entregables de cada fase del proyecto
+- Test
+  - Rama exlusivamente para merge, resolucion de conflictos y solucion de BUGS
